@@ -1,0 +1,67 @@
+
+<div class="row">
+  <div class="col-md-6">
+    <h3>List of News</h3>
+
+  </div>
+  <div class="col-md-6 text-right mt-3">
+    <a href="javascript:;" class="btn btn-primary" [routerLink] ="['../posts/add']">
+      <i class="fa fa-plus fa-lg"></i>
+
+    </a>
+  </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Tiltle</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = 'let item of items ; let i = index'>
+          <td>{{ i +1}}</td>
+          <td>{{item.title}}</td>
+          <td>{{ (item.description.length > 50) ? (item.description | slice:0:50) +'....' : item.description}}</td>
+          <td>
+            <a href="#" class="btn btn-defult text-primary" [routerLink] ="['../posts/show',item.id]">
+              <i class="fa fa-eye"></i>
+            </a>
+            <a href="#" class="btn btn-defult text-sucess" [routerLink] ="['../posts/edit',item.id]">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="javascript:;" class="btn btn-defult text-danger" (click)="deletItem(deleteModal,item.id)"  >
+              <i class="fa fa-trash"></i>
+            </a>
+
+          </td>
+        </tr>
+      
+      </tbody>
+    </table>
+  </div>
+
+
+
+  <ng-template #deleteModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-title">Item Deletion</h4>
+      <button type="button" class="close" aria-describedby="modal-title" (click)="modal.close('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p><strong>Are You Sure you want to delete <span class="text-primary">this item</span>?</strong></p>
+      <p>All information of this item will be permanently deleted.
+        
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancel</button>
+      <button type="button" class="btn btn-danger" (click)="modal.close('ok click')">Ok</button>
+    </div>
+  </ng-template>

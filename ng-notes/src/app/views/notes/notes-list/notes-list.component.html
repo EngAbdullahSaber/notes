@@ -1,0 +1,109 @@
+<!-- <div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+            <div class="col-md-12">
+                <div class="card px-3">
+                    <div class="card-body">
+                        <h4 class="card-title">Awesome Todo list</h4>
+                        <div class="add-items d-flex"> 
+                            <input type="text" class="form-control todo-list-input" placeholder="Title"> 
+                            <input type="text" class="form-control todo-list-input" placeholder="Description"> 
+                            <button class="add btn btn-primary font-weight-bold todo-list-add-btn">Add</button> </div>
+                        <div class="list-wrapper">
+                            <ul class="d-flex flex-column-reverse todo-list" *ngFor = "let item of items">
+                                <li>
+                                    <div class="form-check"> 
+                                        <label class="form-check-label"> 
+                                                <p>{{item.id}}</p>
+                                                <p>{{item.title}}</p>
+                                                <p>{{(item.description.length > 50) ? (item.description | slice:0:50) +'....' : item.description}}</p>
+                                             <hr/>
+                                            </label>
+                                    </div> 
+                                         <a (click)="deletItem(deleteModal,items.id)" href="javascript:;"> 
+                                            <i class="remove mdi mdi-close-circle-outline fas fa-times"></i>
+                                         </a>
+                                </li>
+                              
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ -->
+
+<section class="resume-section p-3 p-lg-5 d-flex" id="about">
+    <div class="w-100">
+        <div class="card-columns">
+            <ng-container *ngIf="items">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button (click)="open(content ,'')" class="btn btn-success" type="button">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <input class="form-control" type="text" name="search" autocomplete="off"/>
+                    <div class="input-group-prepend">
+                        <button class="btn btn-warning" id="button-addon2" type="button">
+                            Search
+                        </button>
+                    </div>
+                </div>
+                <div class="card" *ngFor=" let item of items ">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.title}}
+                            <a (click)="open(content ,item.id)" href="javascript:;" class="">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                        </h5>
+                        <p class="card-text">{{ item.description}}</p>
+                        <a (click)="deletItem(deleteModal,item.id)"  href="javascript:;" >
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </div>
+                </div>
+
+
+
+            </ng-container>
+        </div>
+    </div>
+
+
+</section>
+
+<ng-template #deleteModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-title">Item Deletion</h4>
+      <button type="button" class="close" aria-describedby="modal-title" (click)="modal.close('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p><strong>Are You Sure you want to delete <span class="text-primary">this item</span>?</strong></p>
+      <p>All information of this item will be permanently deleted.
+        
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancel</button>
+      <button type="button" class="btn btn-danger" (click)="modal.close('ok click')">Ok</button>
+    </div>
+  </ng-template>
+
+
+
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Item Details</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+   <app-note-show [itemId]="itemId" (items) ="getUploadedItems($event)"></app-note-show>
+  </ng-template>
+  

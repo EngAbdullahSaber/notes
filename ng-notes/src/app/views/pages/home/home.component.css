@@ -1,0 +1,200 @@
+#header {
+    background: #199EB8;
+    height: 70px;
+  }
+  
+  #header #logo h1 {
+    font-size: 32px;
+    margin: 0;
+    line-height: 0;
+    font-family: "Raleway", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  
+  #header #logo h1 a,
+  #header #logo h1 a:hover {
+    color: #fff;
+  }
+  
+  #header #logo img {
+    padding: 0;
+    margin: 0;
+    max-height: 40px;
+  }
+  
+  .scrolled-offset {
+    margin-top: 70px;
+  }
+
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Raleway", Helvetica, Arial, sans-serif;
+  }
+  
+  p {
+    line-height: 1.55;
+    color: #333;
+    font-size: 400;
+    font-family: "Raleway", Helvetica, Arial, sans-serif;
+  }
+  
+  h1 {
+    font-size: 62px;
+  }
+  
+  h2 {
+    font-size: 30px;
+    margin-bottom: 65px;
+  }
+  
+  h3 {
+    font-size: 24px;
+  }
+  
+  h4 {
+    font-size: 18px;
+  }
+  
+  /*--------------------------------------------------------------
+  # General
+  --------------------------------------------------------------*/
+  a {
+    transition: 0.5s;
+    text-decoration: none;
+    color: #199EB8;
+  }
+  
+  a:hover {
+    color: #23c2e1;
+  }
+  
+  /*--------------------------------------------------------------
+  # Back to top button
+  --------------------------------------------------------------*/
+  .back-to-top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 996;
+    background: #199EB8;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    transition: all 0.4s;
+  }
+  
+  .back-to-top i {
+    font-size: 28px;
+    color: #fff;
+    line-height: 0;
+  }
+  
+  .back-to-top:hover {
+    background: #1ebddc;
+    color: #fff;
+  }
+  
+  .back-to-top.active {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  /* ==================================================
+    Elements
+    ================================================== */
+  .btn {
+    background-color: #199EB8;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-weight: 800;
+    color: #fff;
+    padding: 15px 45px;
+    border-radius: 50px;
+  }
+  
+  .btn:hover {
+    background-color: #E04F00;
+    color: #fff;
+  }
+  
+  .btn:focus {
+    color: #fff;
+  }
+  
+  .btn-ghost {
+    border: 3px solid #fff;
+    background-color: transparent;
+  }
+  
+  .btn-ghost:hover {
+    background-color: #fff;
+    color: #199EB8;
+  }
+  
+  section {
+    padding: 85px 0;
+  }
+  
+  .card {
+    position: relative;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  a:hover {
+    text-decoration: none !important;
+  }
+
+  .hero {
+    display: table;
+    position: relative;
+    background-image: url(src\assets\Depositphotos_209179860_m-2015-e1544808102580.jpg);
+    background-size: cover;
+    padding: 150px 0;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .hero:after {
+    content: '';
+    z-index: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.65);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+  
+  .hero .container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+  }
+  
+  .hero-brand {
+    margin-bottom: 75px;
+    display: inline-block;
+  }
+  
+  .hero-brand:hover {
+    opacity: .75;
+  }
+  
+  .tagline {
+    font-family: "Raleway", Helvetica, Arial, sans-serif;
+    font-size: 26px;
+    margin: 45px 0 75px 0;
+    color: #fff;
+  }
+  
